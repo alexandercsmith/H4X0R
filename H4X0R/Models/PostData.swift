@@ -11,16 +11,16 @@ import Foundation
 
 // Collection of Post's
 struct Results: Decodable {
-    let hits: [Post]
+  let hits: [Post]
 }
 
 // API Data Decoded Object
 struct Post: Decodable, Identifiable {
-    var id: String {
-        return objectID
-    }
-    let objectID: String
-    let points: Int
-    let title: String
-    let url: String?
+  var id: String {
+      return objectID
+  }
+  let objectID: String
+  let points: Int
+  let title: String
+  let url: String?
 }
