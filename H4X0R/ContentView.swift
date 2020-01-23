@@ -16,7 +16,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(networkManager.posts) { post in
-                Text(post.title)
+                HStack {
+                    Text(post.title)
+                    Text(String(post.points))
+                }
             }
             .navigationBarTitle("H4X0R News")
         }
