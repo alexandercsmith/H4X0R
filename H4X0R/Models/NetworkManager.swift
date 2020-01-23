@@ -9,7 +9,11 @@
 
 import Foundation
 
-class NetworkManager {
+class NetworkManager: ObservableObject {
+    
+    // API Response Data
+    // *Observable Object*: Watches for Changes & Updates in State
+    @Published var posts = [Post]()
     
     // Fetch Data from API and return Decoded JSON
     func fetchData() {
@@ -23,6 +27,10 @@ class NetworkManager {
                         do {
                             // Decode JSON Data
                             let results = try decoder.decode(Results.self, from: safeData)
+                            // Wait for Response on Main Thread
+                            DispatchQueue.main.async {
+                                self.posts = results.hits
+                            }
                         } catch {
                             print(error)
                         }
