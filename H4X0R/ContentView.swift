@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            List {
-                Text("H4X0R News")
+            List(posts) { post in
+                Text(post.title)
             }
             .navigationBarTitle("H4X0R News")
         }
@@ -24,3 +24,16 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct Post: Identifiable {
+    let id: String
+    let title: String
+}
+
+let posts = [
+    Post(id: "1", title: "Hello"),
+    Post(id: "2", title: "Helloo"),
+    Post(id: "3", title: "Hellooo"),
+    Post(id: "4", title: "Helloooo"),
+    Post(id: "5", title: "Hellooooo")
+]
