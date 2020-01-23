@@ -5,7 +5,7 @@
 //  Created by Alexander Smith on 1/23/20.
 //  Copyright © 2020 Alexander Smith. All rights reserved.
 //
-//  Purpose: Decode API JSON Results
+//  Purpose: API Data
 
 import Foundation
 
